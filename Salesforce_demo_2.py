@@ -5,7 +5,7 @@ import plotly.express as px
 # Load data
 @st.cache_data
 def load_data():
-    visits = pd.read_excel("EXP01_Calls_Extract_EFKFR_20250505 (avril 25_2).xlsx", sheet_name='Visits')
+    visits = pd.read_excel("exp01_calls_efkfr_20250505.xlsx", sheet_name='Visits')
     visits['Visit Date'] = pd.to_datetime(visits['Visit Date'])
     visits['month'] = visits['Visit Date'].dt.to_period('M')
     visits['quarter'] = visits['Visit Date'].dt.to_period('Q')
