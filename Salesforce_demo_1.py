@@ -4,7 +4,7 @@ import pandas as pd
 # Load data
 @st.cache_data
 def load_data():
-    visits_df = pd.read_excel("EXP01_Calls_Extract_EFKFR_20250505 (avril 25_2).xlsx", sheet_name="Visits")
+    visits_df = pd.read_excel("exp01_calls_efkfr_20250505.xlsx", sheet_name="Visits")
     visits_df = visits_df[visits_df['Pharmacies'].notnull()].copy()
     visits_df['Visit Date'] = pd.to_datetime(visits_df['Visit Date'])
     visits_df['quarter'] = visits_df['Visit Date'].dt.to_period('Q')
